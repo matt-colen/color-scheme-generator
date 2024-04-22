@@ -24,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 5% 1fr 5%;
+  grid-template-columns: 1em 1fr 1em;
   grid-template-areas:
     ".... .... ...."
     ".... main ...."
@@ -60,16 +60,20 @@ Color options section
 */
 .color-options__container {
   padding: 2em 1em;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.color-options__form {
   gap: 1em;
   flex-flow: column;
   align-items: start;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .color-options__color-picker {
   height: 43px;
   width: 61px;
+  cursor: pointer;
 }
 
 .color-options__scheme {
@@ -110,8 +114,43 @@ Color options section
   background: var(--clr-cta-hover);
 }
 
-@media (min-width: 500px) {
-  .color-options__container {
+/*
+Color results section  
+*/
+.color-results__container {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.color-card__container {
+  height: 70vh;
+  position: relative;
+}
+
+.color-card__color-display {
+  height: 100%;
+}
+
+.color-card__color-code {
+  position: absolute;
+  margin: 0;
+  padding: 1em;
+  bottom: 0;
+  color: var(--clr-white);
+  background: var(--clr-background);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 2;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 575px) {
+  body {
+    grid-template-columns: 10% 1fr 10%;
+  }
+  .color-options__form {
     flex-flow: row;
     align-items: center;
   }
@@ -119,17 +158,4 @@ Color options section
   .btn {
     width: auto;
   }
-}
-
-/*
-Color results section  
-*/
-.color-results__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-}
-
-.color-results__card {
-  border: 1px solid var(--clr-white);
-  height: 70vh;
 }

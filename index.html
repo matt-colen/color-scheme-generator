@@ -16,41 +16,44 @@
   <body>
     <main>
       <!-- Color options section  -->
-      <section
-        id="color-options__container"
-        class="color-options__container flex flex-centered"
-      >
-        <input
-          type="color"
-          id="color-options__color-picker"
-          class="color-options__color-picker"
-          name="color-options__color-picker"
-        />
-        <select
-          name="color-options__scheme"
-          id="color-options__scheme"
-          class="color-options__scheme"
+      <section id="color-options__container" class="color-options__container">
+        <form
+          id="color-options__form"
+          class="color-options__form flex flex-centered"
         >
-          <option value="monochrome">Monochrome</option>
-          <option value="monochrome-dark">Monochrome-dark</option>
-          <option value="monochrome-light">Monochrome-light</option>
-          <option value="analogic">Analogic</option>
-          <option value="complement">Complement</option>
-          <option value="analogic-complement">Analogic-complement</option>
-          <option value="triad">Triad</option>
-        </select>
-        <button id="color-options__btn" class="color-options__btn btn">
-          Get color scheme
-        </button>
+          <input
+            type="color"
+            id="color-options__color-picker"
+            class="color-options__color-picker"
+            name="color-options__color-picker"
+            value="#F55A5A"
+          />
+          <select
+            name="color-options__scheme"
+            id="color-options__scheme"
+            class="color-options__scheme"
+          >
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="monochrome-light">Monochrome-light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic-complement</option>
+            <option value="triad">Triad</option>
+          </select>
+          <button
+            id="color-options__btn"
+            class="color-options__btn btn"
+            type="submit"
+          >
+            Get color scheme
+          </button>
+        </form>
       </section>
 
       <!-- Color results section  -->
       <section id="color-results__container" class="color-results__container">
-        <div class="color-results__card"></div>
-        <div class="color-results__card"></div>
-        <div class="color-results__card"></div>
-        <div class="color-results__card"></div>
-        <div class="color-results__card"></div>
+        <!-- Where the color results will populate from the api -->
       </section>
     </main>
     <footer></footer>
