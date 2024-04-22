@@ -2,8 +2,8 @@
   --clr-background: hsla(215, 28%, 17%, 1);
   --clr-border-light: hsl(216, 12%, 84%);
   --clr-text-light: hsla(255, 5%, 84%, 1);
-  --clr-cta: hsl(20, 65%, 47%);
-  --clr-cta-hover: hsl(20, 72%, 40%);
+  --clr-cta: hsl(0, 71%, 64%);
+  --clr-cta-hover: hsl(0, 78%, 57%);
   --clr-white: hsla(0, 0%, 100%, 1);
   --font-primary: "Inter", sans-serif;
   --box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.15);
@@ -126,9 +126,20 @@ Color options section
   background: var(--clr-cta-hover);
 }
 
-/*
+/* 
 Color results section  
 */
+@keyframes scale-in-ver-center {
+  0% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
 .color-results__container {
   margin-top: 1em;
   display: grid;
@@ -138,6 +149,7 @@ Color results section
 .color-card__container {
   height: 70vh;
   position: relative;
+  animation: scale-in-ver-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .color-card__color-display {

@@ -36,19 +36,21 @@
             id="color-options__color-picker"
             class="color-options__color-picker"
             name="color-options__color-picker"
-            value="#c65e2a"
+            value="#e46060"
+            aria-label="Pick a color to build a scheme"
           />
           <select
             name="color-options__scheme"
             id="color-options__scheme"
             class="color-options__scheme"
+            aria-label="Pick a type of scheme to return"
           >
+            <option value="analogic">Analogic</option>
+            <option value="analogic-complement">Analogic-complement</option>
+            <option value="complement">Complement</option>
             <option value="monochrome">Monochrome</option>
             <option value="monochrome-dark">Monochrome-dark</option>
             <option value="monochrome-light">Monochrome-light</option>
-            <option value="analogic">Analogic</option>
-            <option value="complement">Complement</option>
-            <option value="analogic-complement">Analogic-complement</option>
             <option value="triad">Triad</option>
           </select>
           <button
