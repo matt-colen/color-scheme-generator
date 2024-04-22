@@ -15,7 +15,10 @@ const getColorHTML = () => {
     html += `
       <div class="color-card__container">
         <div class="color-card__color-display" style="background:${color.hex.value}"></div>
-        <p class="color-card__color-code">${color.hex.value}</p>
+        <div class="color-card__code-container flex flex-centered" data-hex="${color.hex.value}">
+          <p class="color-card__color-code">${color.hex.value}</p>
+          <i class="fa-solid fa-copy"></i>
+        </div>
       </div>
     `;
   });
@@ -28,7 +31,6 @@ const renderColorHTML = () =>
 
 const getScheme = (formData) => {
   let url = `https://www.thecolorapi.com/scheme?hex=${formData.seedColor}&format=json&mode=${formData.schemeType}&count=4`;
-  console.log(url);
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -49,3 +51,11 @@ document
     e.preventDefault();
     getScheme(getFormData());
   });
+
+document.body.addEventListener("click", (e) => {
+  const code = e.target.dataset.hex;
+  if (code) {
+    navigator.clipboard.writeText(code);
+    alert(`Copied the text: ${code}`);
+  }
+});

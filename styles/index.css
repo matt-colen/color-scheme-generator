@@ -27,9 +27,11 @@ body {
   grid-template-columns: 1em 1fr 1em;
   grid-template-areas:
     ".... .... ...."
+    ".... head ...."
     ".... main ...."
     ".... .... ....";
   gap: 1em 0;
+  color: var(--clr-text-light);
 }
 
 body,
@@ -37,6 +39,10 @@ input,
 select,
 button {
   font-family: var(--font-primary);
+}
+
+header {
+  grid-area: head;
 }
 
 main {
@@ -53,6 +59,11 @@ Utility
 .flex-centered {
   justify-content: center;
   align-items: center;
+}
+
+.title {
+  text-align: center;
+  margin: 0.5em 0;
 }
 
 /* 
@@ -132,18 +143,33 @@ Color results section
   height: 100%;
 }
 
-.color-card__color-code {
+.color-card__code-container {
   position: absolute;
   margin: 0;
   padding: 1em;
   bottom: 0;
-  color: var(--clr-white);
   background: var(--clr-background);
+  width: 100%;
+  gap: 1em;
+  color: var(--clr-text-light);
+}
+
+.color-card__code-container:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  transition: var(--transition-quick);
+}
+
+.color-card__color-code {
   font-size: 0.8rem;
   font-weight: 500;
   line-height: 2;
-  width: 100%;
   text-align: center;
+}
+
+i,
+.color-card__color-code {
+  pointer-events: none;
 }
 
 @media (min-width: 575px) {
