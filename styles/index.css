@@ -2,15 +2,15 @@
   --clr-background: hsla(215, 28%, 17%, 1);
   --clr-border-light: hsl(216, 12%, 84%);
   --clr-text-light: hsla(255, 5%, 84%, 1);
-  --b: #1f2937;
-  --b: #1e2838;
-  --clr-cta: #3e4c60;
+  --clr-cta: hsl(20, 65%, 47%);
+  --clr-cta-hover: hsl(20, 72%, 40%);
   --clr-white: hsla(0, 0%, 100%, 1);
   --font-primary: "Inter", sans-serif;
   --box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.15);
   --box-shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   --radius-soft: 6px;
   --radius-normal: 4px;
+  --transition-quick: all 0.2s;
 }
 
 *,
@@ -23,6 +23,13 @@ body {
   background: var(--clr-background);
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 5% 1fr 5%;
+  grid-template-areas:
+    ".... .... ...."
+    ".... main ...."
+    ".... .... ....";
+  gap: 1em 0;
 }
 
 body,
@@ -33,8 +40,7 @@ button {
 }
 
 main {
-  max-width: 550px;
-  margin: 0 auto;
+  grid-area: main;
 }
 
 /* 
@@ -54,8 +60,11 @@ Color options section
 */
 .color-options__container {
   padding: 2em 1em;
-  box-shadow: var(--box-shadow);
   gap: 1em;
+  flex-flow: column;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .color-options__color-picker {
@@ -64,6 +73,7 @@ Color options section
 }
 
 .color-options__scheme {
+  width: 100%;
   flex-grow: 1;
   background: var(--clr-background);
   color: var(--clr-text-light);
@@ -79,15 +89,13 @@ Color options section
 }
 
 .btn {
-  padding: 1em 0.75em;
+  width: 100%;
+  padding: 1em;
   border: none;
   border-radius: var(--radius-normal);
   box-shadow: var(--box-shadow-sm);
   cursor: pointer;
-}
-
-.btn:hover {
-  opacity: 0.9;
+  transition: var(--transition-quick);
 }
 
 .color-options__btn {
@@ -96,4 +104,32 @@ Color options section
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.33;
+}
+
+.color-options__btn:hover {
+  background: var(--clr-cta-hover);
+}
+
+@media (min-width: 500px) {
+  .color-options__container {
+    flex-flow: row;
+    align-items: center;
+  }
+  .color-options__scheme,
+  .btn {
+    width: auto;
+  }
+}
+
+/*
+Color results section  
+*/
+.color-results__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+
+.color-results__card {
+  border: 1px solid var(--clr-white);
+  height: 70vh;
 }
