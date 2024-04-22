@@ -24,6 +24,7 @@
     <header>
       <h1 class="title">Color Scheme Generator</h1>
     </header>
+
     <main>
       <!-- Color options section  -->
       <section id="color-options__container" class="color-options__container">
@@ -37,13 +38,13 @@
             class="color-options__color-picker"
             name="color-options__color-picker"
             value="#e46060"
-            aria-label="Pick a color to build a scheme"
+            aria-label="Pick initial color to build a scheme"
           />
           <select
             name="color-options__scheme"
             id="color-options__scheme"
             class="color-options__scheme"
-            aria-label="Pick a type of scheme to return"
+            aria-label="Pick a type of scheme to return for your chosen color"
           >
             <option value="analogic">Analogic</option>
             <option value="analogic-complement">Analogic-complement</option>
@@ -64,10 +65,13 @@
       </section>
 
       <!-- Color results section  -->
-      <section id="color-results__container" class="color-results__container">
+      <section
+        id="color-results__container"
+        class="color-results__container"
+        aria-live="polite"
+      >
         <!-- Where the color results will populate from the api -->
       </section>
     </main>
-    <footer></footer>
   </body>
 </html>
