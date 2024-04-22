@@ -1,5 +1,99 @@
+:root {
+  --clr-background: hsla(215, 28%, 17%, 1);
+  --clr-border-light: hsl(216, 12%, 84%);
+  --clr-text-light: hsla(255, 5%, 84%, 1);
+  --b: #1f2937;
+  --b: #1e2838;
+  --clr-cta: #3e4c60;
+  --clr-white: hsla(0, 0%, 100%, 1);
+  --font-primary: "Inter", sans-serif;
+  --box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.15);
+  --box-shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --radius-soft: 6px;
+  --radius-normal: 4px;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+body {
+  background: var(--clr-background);
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+select,
+button {
+  font-family: var(--font-primary);
+}
+
+main {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* 
+Utility 
+*/
+.flex {
+  display: flex;
+}
+
+.flex-centered {
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+Color options section  
+*/
+.color-options__container {
+  padding: 2em 1em;
+  box-shadow: var(--box-shadow);
+  gap: 1em;
+}
+
+.color-options__color-picker {
+  height: 43px;
+  width: 61px;
+}
+
+.color-options__scheme {
+  flex-grow: 1;
+  background: var(--clr-background);
+  color: var(--clr-text-light);
+  border: 1px solid var(--clr-border-light);
+  border-radius: var(--radius-soft);
+  padding: 0.5em 0.75em;
+  box-shadow: var(--box-shadow-sm);
+  line-height: 1.5;
+  appearance: none;
+  background-image: url("../assets/icons/Selector.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.75em) center;
+}
+
+.btn {
+  padding: 1em 0.75em;
+  border: none;
+  border-radius: var(--radius-normal);
+  box-shadow: var(--box-shadow-sm);
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.color-options__btn {
+  background: var(--clr-cta);
+  color: var(--clr-white);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.33;
 }
