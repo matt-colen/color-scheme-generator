@@ -82,9 +82,10 @@ Color options section
 }
 
 .color-options__color-picker {
-  height: 43px;
-  width: 61px;
+  height: 44px;
+  width: 44px;
   cursor: pointer;
+  border-radius: var(--radius-normal);
 }
 
 .color-options__scheme {
